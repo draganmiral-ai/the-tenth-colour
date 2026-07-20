@@ -1,0 +1,408 @@
+/* ==========================================================================
+   The Tenth Colour — quotations, dedication, links, imagery, controls
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Featured quotations
+   -------------------------------------------------------------------------- */
+
+.quote {
+  max-width: 32rem;
+  margin-inline: auto;
+  margin-block: clamp(3.5rem, 11vh, 7rem);
+  text-align: center;
+}
+
+.quote--isolated {
+  margin-block: clamp(4.5rem, 14vh, 9rem);
+}
+
+.quote__text {
+  font-size: clamp(1.375rem, 1.05rem + 1.35vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.quote--second .quote__text {
+  font-size: clamp(1.1875rem, 1rem + 0.85vw, 1.625rem);
+}
+
+.quote__attribution {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 1.75rem;
+}
+
+/**
+ * The word "colours" carries a restrained spectrum sampled from the ten
+ * editions. It is a gradient on text, never an animation.
+ */
+.spectrum {
+  background-image: linear-gradient(
+    100deg,
+    var(--blue-mist) 0%,
+    var(--periwinkle) 20%,
+    var(--soft-pink) 40%,
+    var(--maroon) 58%,
+    var(--onyx-amber) 74%,
+    var(--saffron) 88%,
+    var(--paper-mint) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Retains legibility if background-clip is unsupported. */
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not (background-clip: text) {
+  .spectrum {
+    color: inherit;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Closing line
+   -------------------------------------------------------------------------- */
+
+.closing-line {
+  max-width: 30rem;
+  margin-inline: auto;
+  margin-top: clamp(6rem, 20vh, 13rem);
+  text-align: center;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   Dedication
+   -------------------------------------------------------------------------- */
+
+.dedication {
+  padding-block: clamp(9rem, 26vh, 17rem) clamp(6rem, 16vh, 10rem);
+  padding-inline: var(--gutter);
+  text-align: center;
+}
+
+.dedication__title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
+
+.dedication__volume {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 1.25rem 0 0;
+}
+
+.dedication__line {
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1875rem);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: clamp(3rem, 8vh, 5rem) 0 0;
+}
+
+.dedication__link {
+  display: inline-block;
+  margin-top: clamp(3.5rem, 10vh, 6rem);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+  transition: color 500ms var(--ease-quiet), border-color 500ms var(--ease-quiet);
+}
+
+.dedication__link:hover,
+.dedication__link:focus-visible {
+  color: var(--ink);
+  border-bottom-color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Imagery
+   -------------------------------------------------------------------------- */
+
+.figure__frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: color-mix(in srgb, var(--surface) 88%, var(--graphite));
+}
+
+.figure__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.008);
+  transition: opacity 1400ms var(--ease-quiet), transform 14s linear;
+}
+
+.figure__image.is-loaded {
+  opacity: 1;
+}
+
+/* Extremely gentle breathing while the plate is in view. */
+.figure__frame.is-active .figure__image.is-loaded {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figure__image,
+  .figure__frame.is-active .figure__image.is-loaded {
+    transform: none;
+    transition: opacity 400ms linear;
+  }
+}
+
+.figure__caption {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Elegant placeholder for imagery that has not been supplied yet. ---------- */
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  text-align: center;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 9px,
+    color-mix(in srgb, var(--ink) 5%, transparent) 9px,
+    color-mix(in srgb, var(--ink) 5%, transparent) 10px
+  );
+  border: 1px solid var(--rule);
+}
+
+.placeholder__mark {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.placeholder__file {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  word-break: break-all;
+}
+
+.placeholder__hint {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  max-width: 22rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   Audio control
+   -------------------------------------------------------------------------- */
+
+.audio {
+  position: fixed;
+  z-index: 40;
+  bottom: max(1.5rem, env(safe-area-inset-bottom));
+  right: max(1.25rem, env(safe-area-inset-right));
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+  .audio {
+    left: max(2rem, env(safe-area-inset-left));
+    right: auto;
+    bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+}
+
+.audio__button {
+  /* 48px touch target, comfortably above the mobile browser chrome. */
+  inline-size: 3rem;
+  block-size: 3rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(200, 197, 201, 0.35);
+  border-radius: 50%;
+  background: rgba(16, 22, 20, 0.82);
+  color: var(--mint-light);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: border-color 600ms var(--ease-quiet), box-shadow 900ms var(--ease-quiet),
+    background-color 600ms var(--ease-quiet), opacity 400ms var(--ease-quiet);
+}
+
+.audio__button:hover:not(:disabled) {
+  border-color: rgba(220, 233, 199, 0.5);
+}
+
+.audio__button[data-state='on'] {
+  box-shadow: 0 0 0 1px rgba(220, 233, 199, 0.22), 0 0 22px rgba(220, 233, 199, 0.28);
+  border-color: rgba(220, 233, 199, 0.55);
+}
+
+.audio__button[data-state='loading'] {
+  opacity: 0.7;
+}
+
+.audio__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.audio__glyph {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+}
+
+/* The soft pulse only runs while sound is actually playing. */
+.audio__pulse {
+  transform-origin: center;
+  opacity: 0;
+}
+
+.audio__button[data-state='on'] .audio__pulse {
+  opacity: 1;
+  animation: audio-pulse 3.4s var(--ease-quiet) infinite;
+}
+
+@keyframes audio-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.06);
+  }
+}
+
+.audio__status {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  max-inline-size: 9rem;
+}
+
+/* Hidden visually, still announced by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .audio__button[data-state='on'] .audio__pulse {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Chapter progress
+   -------------------------------------------------------------------------- */
+
+.progress {
+  position: fixed;
+  z-index: 30;
+  top: 50%;
+  right: max(0.85rem, env(safe-area-inset-right));
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 900ms var(--ease-quiet);
+  pointer-events: none;
+}
+
+.progress.is-visible {
+  opacity: 1;
+}
+
+.progress__mark {
+  inline-size: 1px;
+  block-size: 0.75rem;
+  background-color: var(--ink-soft);
+  opacity: 0.28;
+  transition: opacity 700ms var(--ease-quiet), transform 700ms var(--ease-quiet),
+    background-color 700ms var(--ease-quiet);
+}
+
+.progress__mark[data-state='read'] {
+  opacity: 0.5;
+}
+
+.progress__mark[data-state='current'] {
+  opacity: 1;
+  transform: scaleY(1.9);
+  background-color: var(--ink);
+}
+
+/* Too small to be useful on phones — hidden, not merely shrunk. */
+@media (max-width: 47.9375rem) {
+  .progress {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress__mark {
+    transition: none;
+  }
+}
