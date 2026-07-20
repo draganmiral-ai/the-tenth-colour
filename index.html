@@ -17,10 +17,8 @@
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
 
     <!--
-      Open Graph / Twitter.
-      NOTE: social scrapers require an ABSOLUTE og:image URL. Once the final
-      domain is known, change the two og:image / twitter:image values to the
-      full URL, e.g. https://<user>.github.io/the-tenth-colour/images/og-the-tenth-colour.jpg
+      Open Graph / Twitter. Social scrapers require ABSOLUTE image URLs.
+      If the site moves to a custom domain, update these three URLs.
     -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="The Tenth Colour" />
@@ -28,7 +26,11 @@
       property="og:description"
       content="The final colour was not an ending. It was a door."
     />
-    <meta property="og:image" content="%BASE_URL%images/og-the-tenth-colour.jpg" />
+    <meta property="og:url" content="https://draganmiral-ai.github.io/the-tenth-colour/" />
+    <meta
+      property="og:image"
+      content="https://draganmiral-ai.github.io/the-tenth-colour/images/og-the-tenth-colour.jpg"
+    />
     <meta property="og:locale" content="en_GB" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,10 +39,12 @@
       name="twitter:description"
       content="The final colour was not an ending. It was a door."
     />
-    <meta name="twitter:image" content="%BASE_URL%images/og-the-tenth-colour.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://draganmiral-ai.github.io/the-tenth-colour/images/og-the-tenth-colour.jpg"
+    />
 
-    <!-- Canonical (placeholder — set to the final URL before launch). -->
-    <link rel="canonical" href="https://example.com/the-tenth-colour/" />
+    <link rel="canonical" href="https://draganmiral-ai.github.io/the-tenth-colour/" />
 
     <!-- Fonts: preconnect, then a single non-blocking stylesheet request. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
