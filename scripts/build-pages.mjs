@@ -3,11 +3,11 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 // Real HTML entry points make GitHub Pages deep links return 200, rather than 404.
 const shell = await readFile('dist/index.html', 'utf8')
 await writeFile('dist/404.html', shell)
-for (const path of ['gateway', 'reflection']) {
+for (const path of ['', 'gateway', 'reflection', 'original']) {
   await mkdir(`dist/${path}`, { recursive: true })
-  const title = path === 'reflection' ? 'A Year of Return' : 'The Tenth Colour | Collected works'
-  const description = path === 'reflection' ? 'A Year of Return — 6 October 2026.' : 'A collection of personal stories, essays and experiences.'
-  const url = `https://moonconfessions.com/${path}/`
+  const title = path === 'original' ? 'The Tenth Colour | Moon Confessions' : path === 'reflection' ? 'A Year of Return' : 'The Tenth Colour | Collected works'
+  const description = path === 'original' ? 'A final chapter from the Days of Wonder, created one colour at a time.' : path === 'reflection' ? 'A Year of Return — 6 October 2026.' : 'A collection of personal stories, essays and experiences.'
+  const url = `https://moonconfessions.com/${path ? `${path}/` : ''}`
   let page = shell.replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
     .replace(/(<meta\s+(?:name="description"|property="og:description"|name="twitter:description")\s+content=")[^"]*("\s*\/?>)/g, `$1${description}$2`)
     .replace(/(<meta\s+(?:property="og:title"|name="twitter:title")\s+content=")[^"]*("\s*\/?>)/g, `$1${title}$2`)

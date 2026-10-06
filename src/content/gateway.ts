@@ -7,7 +7,7 @@ export const destinations = [
     title: 'The Tenth Colour',
     description: 'A final chapter from the Days of Wonder.',
     linkLabel: 'Enter the story',
-    path: '',
+    path: 'original/',
     theme: 'wonder',
   },
   {

@@ -29,7 +29,7 @@ export function Reflection() {
             <p className="reflection-signature-name">{reflection.signature}</p>
             <time className="reflection-date" dateTime={reflection.dateISO}>{reflection.date}</time>
           </div>}
-          <footer className="reflection-close"><a href={asset('gateway/')}>Return to The Tenth Colour</a></footer>
+          <footer className="reflection-close"><a href={asset('')}>Return to The Tenth Colour</a></footer>
         </article>
       </main>
     </div>

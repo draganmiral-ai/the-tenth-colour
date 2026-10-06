@@ -319,7 +319,7 @@ lives at `/`:
 
 ## Gateway and anniversary reflection
 
-The original story remains at the project root. Two separate entry points extend
+The collection is the domain home; the original story lives at `/original/`. Two separate entry points extend
 the experience:
 
 - `/the-tenth-colour/gateway/`: the collection home, with the original story and anniversary essay.
