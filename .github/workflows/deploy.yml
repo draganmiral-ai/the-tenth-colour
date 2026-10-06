@@ -40,6 +40,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE: /
         # The base path defaults to /the-tenth-colour/ (see vite.config.ts).
         # For a custom domain, set VITE_BASE to "/" here, e.g.
         #   env:

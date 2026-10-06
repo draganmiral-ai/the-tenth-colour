@@ -7,7 +7,7 @@ for (const path of ['gateway', 'reflection']) {
   await mkdir(`dist/${path}`, { recursive: true })
   const title = path === 'reflection' ? 'A Year of Return' : 'The Tenth Colour | Collected works'
   const description = path === 'reflection' ? 'A Year of Return — 6 October 2026.' : 'A collection of personal stories, essays and experiences.'
-  const url = `https://draganmiral-ai.github.io/the-tenth-colour/${path}/`
+  const url = `https://moonconfessions.com/${path}/`
   let page = shell.replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
     .replace(/(<meta\s+(?:name="description"|property="og:description"|name="twitter:description")\s+content=")[^"]*("\s*\/?>)/g, `$1${description}$2`)
     .replace(/(<meta\s+(?:property="og:title"|name="twitter:title")\s+content=")[^"]*("\s*\/?>)/g, `$1${title}$2`)
