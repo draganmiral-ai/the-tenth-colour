@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
+import { ExperienceRouter } from './components/ExperienceRouter'
 import './styles/global.css'
 import './styles/typography.css'
 import './styles/atmosphere.css'
@@ -10,6 +10,6 @@ if (!container) throw new Error('Root container #root was not found in the docum
 
 createRoot(container).render(
   <StrictMode>
-    <App />
+    <ExperienceRouter />
   </StrictMode>,
 )

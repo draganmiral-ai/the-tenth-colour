@@ -316,3 +316,23 @@ lives at `/`:
 ---
 
 *For the one who gave me the assignment.*
+
+## Gateway and anniversary reflection
+
+The original story remains at the project root. Two separate entry points extend
+the experience:
+
+- `/the-tenth-colour/gateway/`: the collection home, with the original story and anniversary essay.
+- `/the-tenth-colour/reflection/`: the complete anniversary manuscript.
+
+The final essay title is “A Year of Return”; no explanatory subtitle is used.
+The writing date is 6 October 2026. Title, date and paragraph-pacing rules live in
+`src/content/reflection.ts`. The gateway uses that same title automatically.
+The author's wording and paragraph breaks are stored in
+`src/content/reflection.txt`; blank lines separate paragraphs.
+Add future gateway destinations through `src/content/gateway.ts`.
+
+The new pages use scoped styles in `src/styles/literary.css`, including mobile,
+keyboard-focus, reduced-motion and print layouts. `scripts/build-pages.mjs`
+creates real HTML entry points after Vite builds, so direct GitHub Pages links
+to the gateway and reflection work without relying on a 404 fallback.
