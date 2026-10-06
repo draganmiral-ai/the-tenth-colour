@@ -1,61 +1,31 @@
 name: Deploy to GitHub Pages
-
-# Builds the site and publishes it to GitHub Pages on every push to main.
-# Enable it once under: repository Settings → Pages → Build and deployment →
-# Source: "GitHub Actions".
-
 on:
   push:
     branches: [main]
-  # Allows a manual run from the Actions tab.
   workflow_dispatch:
-
-# Least-privilege permissions required by the Pages deployment.
 permissions:
   contents: read
   pages: write
   id-token: write
-
-# Let a newer run supersede an in-progress one, but never cancel a run that is
-# midway through publishing.
 concurrency:
   group: pages
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
+      - run: npm ci
+      - run: npm run build
         env:
           VITE_BASE: /
-        # The base path defaults to /the-tenth-colour/ (see vite.config.ts).
-        # For a custom domain, set VITE_BASE to "/" here, e.g.
-        #   env:
-        #     VITE_BASE: "/"
-
-      # NOTE: GitHub Pages must be enabled once by a repo admin before the
-      # first deploy: Settings → Pages → Build and deployment → Source:
-      # "GitHub Actions". (A workflow token cannot create the Pages site —
-      # that API call needs repository administration rights.)
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-
   deploy:
     needs: build
     runs-on: ubuntu-latest

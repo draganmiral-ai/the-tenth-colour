@@ -13,13 +13,15 @@ import react from '@vitejs/plugin-react'
  * VITE_BASE to `/` — either in `.env.production` or as a CI variable — and no
  * other file in the project needs to change.
  */
-const base = process.env.VITE_BASE ?? '/the-tenth-colour/'
+const base = process.env.VITE_BASE ?? '/'
 
 export default defineConfig({
   base,
+  cacheDir: ".cache/vite",
   plugins: [react()],
   build: {
     outDir: 'dist',
+    rollupOptions: { input: { main: 'index.html', original: 'original/index.html' } },
     assetsDir: 'assets',
     // Story imagery is served from /public, so the JS bundle stays small.
     chunkSizeWarningLimit: 600,

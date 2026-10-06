@@ -6,7 +6,7 @@
  */
 
 /** Where "Return to Moon Confessions" points. Replace with the real URL. */
-export const MOON_CONFESSIONS_URL = 'https://example.com/'
+export const MOON_CONFESSIONS_URL = 'https://moonconfessions.com/'
 
 /** Imprint shown at the top of the opening screen and in the dedication. */
 export const IMPRINT = {

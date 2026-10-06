@@ -27,3 +27,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private review and local artifacts
+internal/
+review/
+.cache/
+*.zip
