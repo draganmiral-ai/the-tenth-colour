@@ -1,0 +1,384 @@
+{
+  "stages": [
+    {
+      "slug": "curious",
+      "label": "Curious",
+      "deck": "Exploring, questioning, wondering.",
+      "intro": [
+        "You are welcome here before you know where this journey is leading. Curiosity does not need to arrive with a declaration.",
+        "Begin with the perspective behind the writing, then spend time with one person’s experience of faith. These are lived reflections, not a course or a case you are expected to accept."
+      ],
+      "reading": [
+        {
+          "slug": "before-you-read",
+          "note": "Begin with the person speaking, and the boundaries of what these reflections offer."
+        },
+        {
+          "slug": "direction",
+          "note": "Stay with uncertainty without requiring the whole road to become visible."
+        },
+        {
+          "slug": "a-year-of-return",
+          "note": "If you wish, read one person’s account of what faith changed inside an ordinary life."
+        }
+      ]
+    },
+    {
+      "slug": "beginning",
+      "label": "Beginning",
+      "deck": "Approaching Islam, or newly within it.",
+      "intro": [
+        "A beginning can hold questions as well as certainty. You may be approaching shahada, or learning how a decision already made fits into your days.",
+        "These reflections stay with belonging, learning and private faith. You bring a whole life with you; there is no expectation that you arrive complete."
+      ],
+      "reading": [
+        {
+          "slug": "coming-home",
+          "note": "The emotional weight of feeling watched while learning."
+        },
+        {
+          "slug": "a-year-of-return",
+          "note": "A longer perspective on what changed, and what remained human, in the first year."
+        },
+        {
+          "slug": "quiet-prayer",
+          "note": "A small, personal moment of gratitude."
+        }
+      ]
+    },
+    {
+      "slug": "becoming",
+      "label": "Becoming",
+      "deck": "Learning how faith lives in ordinary days.",
+      "intro": [
+        "Faith meets the day you actually have: its gratitude, its impatience, its longings, and the moments you wish you had handled differently.",
+        "Here, learning is part of living. These pieces leave room for both."
+      ],
+      "reading": [
+        {
+          "slug": "gratitude",
+          "note": "On wanting more without denying what has already been given."
+        },
+        {
+          "slug": "i-let-the-moment-pass",
+          "note": "A poem about choosing what a moment needs, even when you could have been right."
+        },
+        {
+          "slug": "a-year-of-return",
+          "note": "On comfort, responsibility and becoming more aware of who you are trying to be."
+        }
+      ]
+    },
+    {
+      "slug": "returning",
+      "label": "Returning",
+      "deck": "Reconnecting after distance, difficulty or fatigue.",
+      "intro": [
+        "Return can mean coming back to Allah, to a question, to yourself, or to a place where you can think honestly again.",
+        "These pieces offer company for tiredness and beginning again. You do not have to turn your return into a performance."
+      ],
+      "reading": [
+        {
+          "slug": "a-pause",
+          "note": "A difficult day, with no lesson forced upon it."
+        },
+        {
+          "slug": "direction",
+          "note": "Looking for something recognisable when the road feels uncertain."
+        },
+        {
+          "slug": "beginning-again",
+          "note": "An honest account of a day that has not been kind."
+        },
+        {
+          "slug": "ramadan",
+          "note": "A reflection on carrying a season’s quiet into the days that follow."
+        }
+      ]
+    }
+  ],
+  "paths": [
+    {
+      "slug": "curious-about-islam",
+      "label": "I am curious about Islam",
+      "deck": "You are allowed to explore honestly.",
+      "intro": [
+        "You do not have to call yourself Muslim yet to be welcome here. You can be curious, unsure, or simply trying to understand what keeps drawing your attention.",
+        "These are personal accounts of faith being lived. There is no decision to make at the end of a page. Read with your questions still open."
+      ],
+      "reading": [
+        {
+          "slug": "before-you-read",
+          "note": "Begin with the person speaking, and the boundaries of what these reflections offer."
+        },
+        {
+          "slug": "direction",
+          "note": "Stay with uncertainty without requiring the whole road to become visible."
+        },
+        {
+          "slug": "a-year-of-return",
+          "note": "If you wish, read one person’s account of what faith changed inside an ordinary life."
+        }
+      ]
+    },
+    {
+      "slug": "belonging",
+      "label": "I don’t feel Muslim enough",
+      "deck": "There is a whole life behind your starting point.",
+      "intro": [
+        "A small correction can touch something much larger: the fear that you have not earned your place yet.",
+        "These pieces stay with the vulnerability of learning in front of others, and the difference between being seen and being measured."
+      ],
+      "reading": [
+        {
+          "slug": "coming-home",
+          "note": "Start with the uncertainty that appeared when something intimate became visible to other people."
+        },
+        {
+          "slug": "a-year-of-return",
+          "note": "Stay with a longer account of belonging, accountability and a faith that did not erase difficulty."
+        },
+        {
+          "slug": "quiet-prayer",
+          "note": "End, if you wish, with a few private words addressed to Allah."
+        }
+      ]
+    },
+    {
+      "slug": "afraid",
+      "label": "I am afraid",
+      "deck": "Fear can sit beside faith.",
+      "intro": [
+        "Sometimes it is the moment itself. Sometimes it is the fear of who we might become inside it.",
+        "Here are reflections on anticipating fear, making a decision without certainty, and leaving space for tiredness when an answer has not arrived."
+      ],
+      "reading": [
+        {
+          "slug": "the-fear-of-the-fear",
+          "note": "A personal account of leaving before anything has happened, and learning to remain."
+        },
+        {
+          "slug": "the-best-decision",
+          "note": "A short reflection on making an honest choice before knowing whether it will hold."
+        },
+        {
+          "slug": "a-pause",
+          "note": "There is room here for a difficult day that has not become a lesson yet."
+        }
+      ]
+    },
+    {
+      "slug": "alone",
+      "label": "I feel alone",
+      "deck": "Being needed is not always the same as being known.",
+      "intro": [
+        "There can be people around you and still be parts of yourself that have nowhere to go.",
+        "These pieces begin with that distance: the care we give, the care we need, and the traces of love we carry with us."
+      ],
+      "reading": [
+        {
+          "slug": "the-person-i-needed",
+          "note": "On being valued for steadiness while needing someone to offer that same steadiness in return."
+        },
+        {
+          "slug": "the-shape-of-safety",
+          "note": "A longer reflection on the ordinary gestures through which a mother’s care remains present."
+        },
+        {
+          "slug": "before-you-read",
+          "note": "Meet the voice behind this space: still learning, still questioning, still inside the journey."
+        }
+      ]
+    },
+    {
+      "slug": "hope",
+      "label": "I need hope",
+      "deck": "A little light, without a perfect ending.",
+      "intro": [
+        "These pieces do not ask you to explain away a difficult day. They move between an imagined landscape, a changed understanding of gratitude, and one small step."
+      ],
+      "reading": [
+        {
+          "slug": "the-light",
+          "note": "Watch the film or read its words. The landscape gives the feeling of light somewhere to live."
+        },
+        {
+          "slug": "gratitude",
+          "note": "On being thankful for the life you have while still admitting what you long for."
+        },
+        {
+          "slug": "the-next-step",
+          "note": "A short thought to carry away, without having to see the whole road."
+        }
+      ]
+    },
+    {
+      "slug": "returning",
+      "label": "I am finding my way back",
+      "deck": "You can return with things still unresolved.",
+      "intro": [
+        "Perhaps you have been distant. Perhaps you are simply tired. You do not have to explain all of it before you read.",
+        "This selection follows tiredness, the search for direction, and the possibility of beginning again."
+      ],
+      "reading": [
+        {
+          "slug": "a-pause",
+          "note": "Begin with the day when meaning could wait, and kindness had to be enough."
+        },
+        {
+          "slug": "direction",
+          "note": "A reflection on recognising a direction without knowing the destination."
+        },
+        {
+          "slug": "beginning-again",
+          "note": "An unfinished day, anger, and the possibility of meeting tomorrow differently."
+        }
+      ]
+    },
+    {
+      "slug": "quiet",
+      "label": "I just need somewhere quiet",
+      "deck": "Nothing to finish here.",
+      "intro": [
+        "You can stay with one piece. You can leave a page unfinished. These small observations make room for a moment that does not have to become anything else."
+      ],
+      "reading": [
+        {
+          "slug": "morning-light",
+          "note": "An ordinary room, a change in the light, and a little attention."
+        },
+        {
+          "slug": "stillness",
+          "note": "A reflection that gives stillness a landscape of its own."
+        },
+        {
+          "slug": "a-pause",
+          "note": "For when you do not have the energy to turn the day into an explanation."
+        }
+      ]
+    }
+  ],
+  "worlds": [
+    {
+      "slug": "the-light",
+      "label": "The Light",
+      "deck": "A gentle turn toward Allah.",
+      "intro": [
+        "Light appears here as a film, a quiet prayer, a change in how gratitude feels. Each piece comes from personal reflection.",
+        "You can watch, read, or remain with a few words. There is no order you need to complete."
+      ],
+      "reading": [
+        {
+          "slug": "the-light",
+          "note": "The original film and the words that gave it direction."
+        },
+        {
+          "slug": "quiet-prayer",
+          "note": "A private expression of thanks."
+        },
+        {
+          "slug": "gratitude",
+          "note": "A reflection on gratitude and longing sharing the same prayer."
+        },
+        {
+          "slug": "direction",
+          "note": "On looking for a direction before the whole road is visible."
+        }
+      ]
+    }
+  ],
+  "arrivals": [
+    {
+      "slug": "the-light",
+      "label": "When the light stays with you",
+      "deck": "From a moment on screen to a little more space.",
+      "intro": [
+        "The film gives hope a landscape: darkness, water, and light that becomes visible as you move toward it.",
+        "If that feeling brought you here, begin with the film’s words, then follow the question of direction into a longer reflection."
+      ],
+      "reading": [
+        {
+          "slug": "the-light",
+          "note": "Return to the film and read the words at your own pace."
+        },
+        {
+          "slug": "direction",
+          "note": "Stay with the question beneath the image: what can guide us when we cannot see the destination?"
+        },
+        {
+          "slug": "a-pause",
+          "note": "Make room, too, for the days when the meaning is not yet clear."
+        }
+      ]
+    },
+    {
+      "slug": "gratitude",
+      "label": "When gratitude still has room for longing",
+      "deck": "Stay with the thought a little longer.",
+      "intro": [
+        "The sentence on screen begins with a tension: being grateful for what is, while still wanting something more.",
+        "Here, the reflection has room to hold both. A longer essay then follows gratitude into the ordinary details of a year."
+      ],
+      "reading": [
+        {
+          "slug": "gratitude",
+          "note": "Read the full reflection behind the film, including the prayer it eventually becomes."
+        },
+        {
+          "slug": "a-year-of-return",
+          "note": "Continue into gratitude as a way of noticing a life, rather than a list of things received."
+        }
+      ]
+    },
+    {
+      "slug": "belonging",
+      "label": "When being seen feels like being judged",
+      "deck": "There is more behind the photograph.",
+      "intro": [
+        "A correction can land far beyond the detail it was meant to address. The question can become whether the person learning is being seen at all.",
+        "These reflections make space for that difference, and for the life that came before faith."
+      ],
+      "reading": [
+        {
+          "slug": "coming-home",
+          "note": "Read the reflection behind the carousel, in its full context."
+        },
+        {
+          "slug": "a-year-of-return",
+          "note": "Stay with a broader account of belonging after a year within Islam."
+        },
+        {
+          "slug": "the-person-i-needed",
+          "note": "Follow the question of being seen into the relationships we live outside the photograph."
+        }
+      ]
+    }
+  ],
+  "trust": {
+    "title": "Before You Read",
+    "deck": "You are welcome here before you have everything figured out.",
+    "sections": [
+      {
+        "title": "A lived perspective.",
+        "paragraphs": [
+          "Moon Confessions comes from lived experience: faith as it meets an ordinary life, with its fear, doubt, gratitude, grief and moments of belonging.",
+          "It offers companionship, honest reflection and a personal perspective. It is not a religious authority, and personal experience is not a religious ruling."
+        ]
+      },
+      {
+        "title": "Room for your questions.",
+        "paragraphs": [
+          "You do not have to call yourself Muslim yet to be welcome here. You can be curious, be uncertain, or be finding your way back.",
+          "You do not need to agree with everything you read. There is no expectation that reading here will lead you to a particular decision."
+        ]
+      },
+      {
+        "title": "When reflection is not enough.",
+        "paragraphs": [
+          "Some questions need more than one person’s story. For religious knowledge, rulings or interpretation, consult qualified sources and people with the relevant learning.",
+          "The writing here can sit beside that learning. It cannot take its place."
+        ]
+      }
+    ]
+  }
+}

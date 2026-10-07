@@ -1,3 +1,5 @@
+import { MoonMark } from './MoonMark'
+import '../styles/moon-mark.css'
 import { useEffect } from 'react'
 import { asset, IMPRINT } from '../config'
 import { destinations } from '../content/gateway'
@@ -22,7 +24,7 @@ export function Gateway() {
               <span className="gateway-path-top"><span>{destination.number}</span><span>{destination.label}</span></span>
               <span className="gateway-path-title">{destination.id === 'reflection' ? reflection.title : destination.title}</span>
               <span className="gateway-path-description">{destination.description}</span>
-              <span className="gateway-path-action">{destination.linkLabel}<span aria-hidden="true">↗</span></span>
+              <span className="gateway-path-action">{destination.linkLabel}<MoonMark/></span>
             </a>
           ))}
         </nav>

@@ -1,0 +1,120 @@
+/* Official Moonrise: one moon above a still horizon. No continuous animation. */
+:root {
+  --moon-ink: #817047;
+  --moon-text: #62573e;
+  --moon-divider: #ac9c7d;
+  --moon-ease: cubic-bezier(.22, .61, .36, 1);
+}
+.moon-mark {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 24px;
+  color: var(--moon-ink, currentColor);
+  opacity: .72;
+  overflow: visible;
+  pointer-events: none;
+  vertical-align: middle;
+  transition: opacity 1200ms var(--moon-ease);
+}
+.moon-mark path { stroke: currentColor; stroke-width: 1; stroke-linecap: round; }
+.moon-mark .moon-rise {
+  transform-box: view-box;
+  transform-origin: 20px 18px;
+  transition: transform 1200ms var(--moon-ease);
+}
+:where(a, button, summary):has(.moon-mark) {
+  transition: color 1000ms var(--moon-ease), border-color 1000ms var(--moon-ease);
+}
+.moon-row :is(h2, h3), .entry-card h3 { transition: color 1000ms var(--moon-ease); }
+.moon-row > .moon-mark, .shadow-index .moon-mark { width: 38px; height: 28px; }
+.stage-links .moon-mark { width: 27px; height: 20px; }
+.path-piece > .moon-mark { align-self: center; }
+.arrival-paths > .moon-row { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.arrival-paths > .moon-row > div { min-width: 0; }
+.related-grid .moon-mark { position: absolute; right: 0; bottom: 24px; }
+.related-grid .moon-row h3 { padding-right: 53px; }
+.shadow-index .moon-mark { align-self: center; }
+
+/* The geometry is shared; its ink follows the surface it sits on. */
+.return-passage, .shadow-passage, .light-screen, .letters, .film-dialog,
+.night-reading, .journal-closing, .journal-hero .journal-amazon, .sky-frame {
+  --moon-ink: #d2bd8e;
+  --moon-text: #eadfc9;
+  --moon-divider: #a08c6b;
+}
+.journal-feature, .journal-page { --moon-ink: #647252; --moon-text: #43543d; --moon-divider: #8b967b; }
+.journal-closing, .journal-hero .journal-amazon { --moon-ink: #dfd6b8; --moon-text: #fff4d8; --moon-divider: #c3bc9c; }
+
+/* Compact inline cues never create another hit target. The parent owns the click. */
+.navigation .nav-letter { display: inline-flex; align-items: center; gap: 12px; }
+.navigation .moon-mark, .footer .moon-mark, .film-theme .moon-mark { width: 27px; height: 20px; }
+.footer a:has(.moon-mark), .film-dialog > a { gap: 12px; }
+.film-dialog > a { display: inline-flex; align-items: center; }
+.line-link { gap: 22px; }
+.back-link, .reader-path-context { display: flex; align-items: center; gap: 12px; }
+.back-link .moon-mark, .reader-path-context .moon-mark { width: 27px; height: 20px; }
+.stillness-story h2 .moon-mark { width: 34px; height: 24px; margin-left: 8px; }
+.entry-card { display: block; }
+.entry-card > .text-link { pointer-events: none; }
+.journal-enlarge { display: inline-flex; align-items: center; gap: 7px; }
+.journal-enlarge .moon-mark, .journal-preview-controls .moon-mark { width: 22px; height: 17px; }
+.journal-preview-controls button { display: inline-flex; align-items: center; gap: 7px; }
+.journal-transcript summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; list-style: none; }
+.journal-transcript summary::-webkit-details-marker { display: none; }
+.journal-transcript summary::marker { content: ''; }
+.moon-select { position: relative; }
+.mobile-theme.moon-select::after { display: none; }
+.stage-select { display: inline-block; min-width: 0; }
+.moon-select select { appearance: none; -webkit-appearance: none; padding-right: 35px; }
+.stage-filter .stage-select select { width: 100%; max-width: 100%; }
+.moon-select > .moon-mark { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); width: 24px; height: 18px; }
+
+:where(a, button:not(:disabled), summary):has(.moon-mark):focus-visible {
+  color: var(--moon-text);
+  border-color: var(--moon-divider);
+  outline: 1px solid var(--moon-ink);
+  outline-offset: 5px;
+}
+:where(a, button:not(:disabled), summary):focus-visible .moon-mark,
+.moon-select:focus-within .moon-mark,
+.journal-transcript[open] > summary .moon-mark { opacity: 1; }
+:where(a, button:not(:disabled), summary):focus-visible .moon-rise,
+.moon-select:focus-within .moon-rise,
+.journal-transcript[open] > summary .moon-rise { transform: scaleY(1.444444); }
+.moon-row:focus-visible :is(h2, h3), .entry-card:focus-visible h3 { color: var(--moon-text); }
+@media (hover: hover) and (pointer: fine) {
+  :where(a, button:not(:disabled), summary):has(.moon-mark):hover { color: var(--moon-text); border-color: var(--moon-divider); }
+  :where(a, button:not(:disabled), summary):hover .moon-mark, .moon-select:hover .moon-mark { opacity: 1; }
+  :where(a, button:not(:disabled), summary):hover .moon-rise, .moon-select:hover .moon-rise { transform: scaleY(1.444444); }
+  .moon-row:hover { text-decoration: none; }
+  .moon-row:hover :is(h2, h3), .shadow-index .moon-row:hover h3, .entry-card:hover h3 { color: var(--moon-text); }
+}
+@media (max-width: 1270px) {
+  .navigation .nav-letter { justify-content: space-between; }
+}
+@media (max-width: 700px) {
+  .path-piece { gap: 16px; }
+  .path-piece > .moon-mark { width: 30px; height: 22px; }
+  .arrival-paths > .moon-row { gap: 20px; }
+  .passage-colophon .scroll-cue { max-width: 120px; gap: 10px; }
+  .scroll-cue .moon-mark { width: 27px; height: 20px; }
+  .stage-filter .stage-select { max-width: 60%; }
+  .mobile-theme.moon-select select { padding-right: 33px; }
+}
+@media (max-width: 360px) {
+  .passage-colophon .scroll-cue { max-width: 112px; }
+  .journal-preview-controls { flex-wrap: wrap; }
+  .journal-preview-controls > span { order: -1; width: 100%; text-align: center; }
+}
+@media (max-width: 420px) {
+  .archive-choice { flex-wrap: wrap; }
+  .mobile-theme.moon-select { flex: 1 1 200px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .moon-mark, .moon-mark .moon-rise,
+  :where(a, button, summary):has(.moon-mark), .moon-row :is(h2, h3), .entry-card h3 { transition: none; }
+  :where(a, button, summary):is(:hover, :focus-visible) .moon-rise,
+  .moon-select:is(:hover, :focus-within) .moon-rise,
+  .journal-transcript[open] > summary .moon-rise { transform: none; }
+}

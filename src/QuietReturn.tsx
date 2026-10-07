@@ -1,3 +1,4 @@
+import { MoonMark } from './components/MoonMark'
 import { useRef, useState } from 'react'
 import samplePages from './content/journal-preview.json'
 
@@ -8,9 +9,8 @@ const coverAlt = 'Sage cover of The Quiet Return, Volume I: Beginning, by Dragan
 const roomPhoto = '/media/journal/physical-book-room.png'
 const beadsPhoto = '/media/journal/physical-book-beads.png'
 
-function Arrow() { return <span aria-hidden="true">↗</span> }
 function AmazonLink() {
-  return <a className="journal-amazon" href={AMAZON_URL} target="_blank" rel="noopener noreferrer">View on Amazon <Arrow/><span className="sr-only"> (opens in a new tab)</span></a>
+  return <a className="journal-amazon" href={AMAZON_URL} target="_blank" rel="noopener noreferrer">View on Amazon <MoonMark/><span className="sr-only"> (opens in a new tab)</span></a>
 }
 
 export function JournalFeature() {
@@ -24,7 +24,7 @@ export function JournalFeature() {
         <h2 id="journal-feature-heading">A quiet place<br/> to <em>return.</em></h2>
         <p>Thirty gentle reflections, small moments of learning, and space for your own words. The Quiet Return is an undated journal for new Muslims, created to hold questions, gratitude, uncertainty, and hope, at your own pace.</p>
         <div className="journal-rhythm" aria-label="Reflect, learn and write"><span>Reflect</span><span>Learn</span><span>Write</span></div>
-        <div className="journal-actions"><a className="text-link" href={JOURNAL_URL}>Explore the journal <Arrow/></a><AmazonLink/></div>
+        <div className="journal-actions"><a className="text-link" href={JOURNAL_URL}>Explore the journal <MoonMark/></a><AmazonLink/></div>
       </div>
     </div>
   </section>
@@ -44,18 +44,18 @@ function InteriorPreview() {
       {samplePages.map((page, i) => <figure key={page.number}>
         <button className="journal-page-button" onClick={() => { setSelected(i); setTextView(false); dialog.current?.showModal() }} aria-label={`Enlarge sample page ${i + 1}: ${page.label}`}>
           <img src={page.image} alt={page.label === 'Write' ? 'A lined writing page with a short thought at the top' : page.label === 'Reflect' ? 'You Are Already Allowed to Be Near: the first reflection, with Qur’an reference 2:186' : 'One thing to learn: Du’a, with the Arabic word and a gentle explanation'} width="1165" height="1800" loading="lazy"/>
-          <span className="journal-enlarge" aria-hidden="true">Read page ↗</span>
+          <span className="journal-enlarge" aria-hidden="true">Read page <MoonMark/></span>
         </button>
         <figcaption><span>0{i + 1}</span> {page.label}</figcaption>
       </figure>)}
     </div>
     <p className="journal-sample-note">The first four-page entry, shown as printed. Open any page to read it.</p>
-    <details className="journal-transcript"><summary>Read the sample as text</summary><div>
+    <details className="journal-transcript"><summary>Read the sample as text <MoonMark/></summary><div>
       {samplePages.map((page, i) => <section key={page.number}><h3>0{i + 1} · {page.label}</h3><p dir="auto">{page.text}</p>{page.label === 'Write' && <p className="sample-writing-note">The rest of this page is lined space for your own writing.</p>}</section>)}
     </div></details>
     <dialog className="journal-preview-dialog" ref={dialog} aria-labelledby="sample-dialog-heading" onClick={e => { if (e.target === dialog.current) dialog.current?.close() }}>
       <div className="journal-preview-bar"><h2 id="sample-dialog-heading">Sample {selected + 1} of 4 · {current.label}</h2><button autoFocus onClick={() => dialog.current?.close()} aria-label="Close sample preview">Close ×</button></div>
-      <div className="journal-preview-controls"><button disabled={selected === 0} onClick={() => setSelected(selected - 1)}>← Previous page</button><span>Print page {current.number}</span><button disabled={selected === 3} onClick={() => setSelected(selected + 1)}>Next page →</button></div>
+      <div className="journal-preview-controls"><button disabled={selected === 0} onClick={() => setSelected(selected - 1)}>Previous page <MoonMark/></button><span>Print page {current.number}</span><button disabled={selected === 3} onClick={() => setSelected(selected + 1)}>Next page <MoonMark/></button></div>
       <div className="journal-preview-mode"><button aria-pressed={textView} onClick={() => setTextView(!textView)}>{textView ? 'Show printed page' : 'Read in larger text'}</button></div>
       <div key={`${selected}-${textView}`} className={`journal-preview-sheet${textView ? ' journal-preview-text' : ''}`}>
         {textView ? <><p dir="auto">{current.text}</p>{current.label === 'Write' && <p className="sample-writing-note">The rest of this page is lined space for your own writing.</p>}</> : <img src={current.image} alt={`Print page ${current.number}: ${current.label}`} width="1165" height="1800"/>}
@@ -73,7 +73,7 @@ export function QuietReturn() {
         <p className="journal-volume">Volume I: Beginning</p>
         <p className="journal-introduction">Thirty gentle reflections, small moments of learning, and space for your own words.</p>
         <p className="journal-audience">For new Muslims, reverts, and anyone exploring Islam at their own pace. A personal companion for questions, gratitude, uncertainty, and hope.</p>
-        <div className="journal-actions"><AmazonLink/><a className="text-link" href="#inside">Look inside <span aria-hidden="true">↓</span></a></div>
+        <div className="journal-actions"><AmazonLink/><a className="text-link" href="#inside">Look inside <MoonMark/></a></div>
         <p className="journal-edition">First edition, 2026</p>
       </div>
       <figure className="journal-hero-cover"><img src={beadsPhoto} alt="The physical Quiet Return journal resting on a green table beside a strand of coloured beads" width="1086" height="1448" fetchPriority="high"/><figcaption>A quiet companion, within reach.</figcaption></figure>
