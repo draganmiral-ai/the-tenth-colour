@@ -61,3 +61,29 @@
 .collection .entry-flower .image-link img,.collection .entry-hidden-chamber .image-link img,.collection .entry-the-fear-of-the-fear .image-link img,.collection .entry-lanterns .image-link img,.collection .entry-a-pause .image-link img,.collection .entry-beginning-again .image-link img{object-fit:contain;background:var(--navy)}
 
 .collection .entry-flower .image-link,.collection .entry-hidden-chamber .image-link,.collection .entry-the-fear-of-the-fear .image-link,.collection .entry-lanterns .image-link,.collection .entry-a-pause .image-link,.collection .entry-beginning-again .image-link{aspect-ratio:4/5}
+
+/* Unprovoked: one quiet invitation, then an uninterrupted poem. */
+.story-orbit{row-gap:56px}
+.poem-feature{grid-column:1/-1;display:grid;grid-template-columns:1.2fr .8fr;gap:9%;align-items:center;padding:0 0 40px;border-bottom:1px solid var(--line);transition:border-color 1.2s ease}
+.poem-feature-image{overflow:hidden;background:#383a29}
+.poem-feature-image img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain}
+.poem-feature-copy .eyebrow{color:#766544}
+.poem-feature-copy h2{font-size:clamp(44px,5vw,72px);line-height:1.05;margin:22px 0}
+.poem-feature-copy>p{white-space:pre-line;font:27px/1.4 var(--serif);margin:0 0 25px}
+.poem-feature .text-link{font-size:14px}
+.poem-feature:hover,.poem-feature:focus-visible{border-color:#998653}
+.poem-feature-copy h2{transition:color 1.2s ease}
+.poem-feature:hover h2,.poem-feature:focus-visible h2{color:#877046}
+.opening-artwork .reader-opening h1{margin-bottom:28px}
+.opening-artwork .manuscript>.reader-image{margin:0 auto 52px}
+.opening-artwork .manuscript>p,.opening-artwork .manuscript>.quiet-line{font-family:var(--serif);font-size:27px;font-weight:400;line-height:1.55;margin:0 0 32px}
+.opening-artwork .manuscript>.essay-end{margin-top:100px}
+@media(max-width:700px){
+ .poem-feature{grid-template-columns:1fr;gap:24px;padding-bottom:32px;margin-bottom:32px}
+ .poem-feature-copy h2{font-size:48px;margin:13px 0}
+ .poem-feature-copy>p{font-size:25px;margin-bottom:14px}
+ .opening-artwork .manuscript>.reader-image{margin-bottom:38px}
+ .opening-artwork .manuscript>p,.opening-artwork .manuscript>.quiet-line{font-size:23px;line-height:1.55;margin-bottom:30px}
+ .opening-artwork .manuscript>.essay-end{margin-top:82px}
+}
+@media(prefers-reduced-motion:reduce){.poem-feature,.poem-feature-copy h2{transition:none}}
