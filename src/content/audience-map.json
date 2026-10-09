@@ -527,5 +527,20 @@
       "accountability",
       "learning"
     ]
+  },
+  "unprovoked": {
+    "stages": [
+      "becoming",
+      "returning"
+    ],
+    "emotions": [
+      "love",
+      "tenderness",
+      "safety",
+      "belonging",
+      "identity",
+      "vulnerability",
+      "healing"
+    ]
   }
 }
