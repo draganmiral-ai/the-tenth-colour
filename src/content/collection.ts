@@ -1,6 +1,29 @@
-export type Entry = {slug:string;title:string;category:'Faith & belonging'|'Light & hope'|'Becoming & healing'|'Love & letting go'|'Ordinary grace';format:'Reflection'|'Poem'|'Film'|'Note';excerpt:string;paragraphs:string[];image?:string;imageAlt?:string;imageCaption?:string;video?:string;gallery?:string[];source:string};
+export type Entry = {slug:string;title:string;category:'Faith & belonging'|'Light & hope'|'Becoming & healing'|'Love & letting go'|'Ordinary grace';format:'Reflection'|'Poem'|'Film'|'Note';excerpt:string;paragraphs:string[];image?:string;imagePlacement?:'opening';imageAlt?:string;imageCaption?:string;video?:string;gallery?:string[];source:string};
 
 export const entries: Entry[] = [
+  {
+    "slug": "unprovoked",
+    "title": "Unprovoked",
+    "category": "Love & letting go",
+    "format": "Poem",
+    "excerpt": "As though tenderness\nhad nothing to ask.",
+    "paragraphs": [
+      "I've been so much\nto so many\nthat I have lost track\nof who I am to myself.",
+      "I learned to be wanted\nwithout ever being known,\nto wear a face\nand call it mine.",
+      "Then you kissed my hand.\nUnprovoked.",
+      "As though tenderness\nhad nothing to ask.",
+      "You held me,\nstrong enough for fear to loosen,\ngentle enough that I did not need to be brave.",
+      "And for once,\nI reached for no familiar face,\nno better version,\nno clever thing to say.",
+      "I was quiet.\nI was there.",
+      "You kissed my hand.\nUnprovoked.",
+      "The years did not disappear.\nThe wounds did not vanish.\nNothing was suddenly made whole.",
+      "But something in me,\nafter a lifetime of becoming,\nwas, for a moment,\nallowed to be."
+    ],
+    "image": "/media/unprovoked.jpg",
+    "imagePlacement": "opening",
+    "imageAlt": "Ivory linen resting in the curve of an olive velvet sofa, touched by warm lamplight.",
+    "source": "Original poem supplied and approved by the author, 9 October 2026"
+  },
   {
     "slug": "the-light",
     "title": "The Light",
