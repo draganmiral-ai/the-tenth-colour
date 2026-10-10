@@ -1,4 +1,4 @@
-.letter-form .ml-form-fieldRow { margin: 28px 0 16px; }
+.letter-form .formkit-field { margin: 28px 0 16px; }
 .letter-form label { display: block; margin-bottom: 10px; font: 12px/1.5 var(--sans); letter-spacing: .04em; color: #ddd5c6; }
 .letter-form input[type="email"] { display: block; box-sizing: border-box; width: 100%; min-height: 52px; border: 0; border-bottom: 1px solid #a49d8e; border-radius: 0; background: transparent; color: var(--paper); padding: 10px 0; font: 18px/1.5 var(--serif); }
 .letter-form input::placeholder { color: #b8b3a8; opacity: 1; }
@@ -14,8 +14,16 @@
 .letter-response { padding: 25px 0 5px; }
 .letter-response h3 { font: 36px/1.2 var(--serif); margin: 0 0 20px; }
 .letter-response h3:focus { outline: none; }
-.letter-form .ml-error input { border-color: #e5b9a9; }
+.letter-form .formkit-alert-error:not(:empty) + .formkit-fields input:invalid { border-color: #e5b9a9; }
 .letters-confirmed { padding-top: 100px; padding-bottom: 130px; max-width: 900px; }
 .letters-confirmed h1 { font: 76px/1.03 var(--serif); margin: 28px 0; letter-spacing: -.03em; }
 .letters-confirmed p { max-width: 520px; font: 20px/1.7 var(--serif); margin-bottom: 35px; }
 @media(max-width:700px) { .letters-confirmed { padding-top: 60px; padding-bottom: 80px; } .letters-confirmed h1 { font-size: 49px; } .letter-form input[type="email"] { font-size: 20px; } }
+
+.letter-form .formkit-alert:empty { display: none; }
+.letter-form .formkit-alert { padding: 18px 0; margin: 0; list-style: none; font: 18px/1.7 var(--serif); }
+.letter-form .formkit-alert-error { color: #e5b9a9; }
+.letter-form .formkit-alert-success { color: var(--paper); }
+.letter-form .kit-credit { margin-top: 24px; }
+.letter-form .kit-credit a { font-size: 10px; text-decoration: none; }
+.letter-submit[data-active] { opacity: .65; pointer-events: none; }
