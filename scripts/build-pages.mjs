@@ -21,7 +21,8 @@ const pages=[
  {path:'the-quiet-return',title:'The Quiet Return Journal',description:'Thirty gentle reflections, small moments of learning, and space for your own words. An undated journal for new Muslims.',image:'/media/journal/cover.jpg',externalHref:'https://www.amazon.com/dp/B0HKDJK8BL'},
  {path:'films',title:'Quiet films',description:'Small films to sit with. Press play when you are ready.'},
  {...before,path:'about',description:journeys.trust.deck,body:trustBody},
- {path:'letters',title:'Letters to you',description:'A quieter corner of your inbox. Email subscriptions are not open yet.'},
+ {path:'letters',title:'Letters to you',description:'Occasional letters on faith, love and finding your way. Read them when you have a little space.'},
+ {path:'letters/confirmed',noindex:true,title:'You are here',description:'Your email address is confirmed. You are allowed to arrive slowly.'},
  {path:'privacy',title:'Privacy',description:'Your quiet is yours.'},
  {path:'reflection',title:'A Year of Return',description:'365 days. On gratitude, accountability, and finding a place to return to.',paragraphs:manuscript.trim().split(/\n\s*\n/),image:'/media/return.jpg'},
  ...entries.map(e=>({...e,path:`read/${e.slug}`,description:e.slug==='before-you-read'?journeys.trust.deck:e.excerpt,...e.slug==='before-you-read'?{body:trustBody}:{}})),
@@ -35,6 +36,7 @@ for(const p of pages){
  const image=p.image||(!p.paragraphs?'/media/return.jpg':null)
  const url=`https://moonconfessions.com/${p.path==='about'?'read/before-you-read/':p.path?p.path+'/':''}`
  let html=shell.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*"\s*\/?>/,`<meta name="description" content="${esc(p.description)}"/>`)
+ if(p.noindex)html=html.replace('content="index,follow"','content="noindex,follow"')
  html=html.replace('</head>',`<link rel="canonical" href="${url}"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(p.description)}"/><meta property="og:url" content="${url}"/><meta property="og:type" content="${p.paragraphs?'article':'website'}"/>${image?`<meta property="og:image" content="https://moonconfessions.com${image}"/>`:``}</head>`)
  const words=p.body||(p.paragraphs?`<h1>${esc(p.title)}</h1>${p.paragraphs.map(t=>`<p>${esc(t).replaceAll('\n','<br/>')}</p>`).join('')}`:`<h1>${esc(p.title)}</h1><p>${esc(p.description)}</p>`)
  const links=(p.links||[]).map(link=>`<p><a href="${esc(link.href)}">${esc(link.label)}</a>${link.note?` — ${esc(link.note)}`:''}</p>`).join('')
@@ -46,6 +48,6 @@ await writeFile('dist/404.html',shell.replace('content="index,follow"','content=
 const original=withAnalytics(await readFile('dist/original/index.html','utf8'))
 await writeFile('dist/original/index.html',publishing?original:original.replace('</head>','<meta name="robots" content="noindex,nofollow"/></head>'))
 await writeFile('dist/robots.txt',publishing?'User-agent: *\nAllow: /\nSitemap: https://moonconfessions.com/sitemap.xml\n':'User-agent: *\nDisallow: /\n')
-const paths=pages.filter(p=>p.path!=='about').map(p=>p.path).concat('original')
+const paths=pages.filter(p=>p.path!=='about'&&p.path!=='letters/confirmed').map(p=>p.path).concat('original')
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(path=>`<url><loc>https://moonconfessions.com/${path?path+'/':''}</loc></url>`).join('')}</urlset>`)
 console.log(`Prepared ${pages.length} static routes plus the preserved original experience; ${publishing?'publication build':'local review only, noindex'}.`)
