@@ -1,6 +1,12 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 const publishing=process.env.MC_PUBLISH==='1'
-const shell=(await readFile('dist/index.html','utf8')).replace(/<meta name="robots" content="[^"]*"\s*\/?>/,`<meta name="robots" content="${publishing?'index,follow':'noindex,nofollow'}"/>`)
+// This public site token is supplied by Cloudflare; it is not an API credential.
+const analyticsSnippet=`<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"16c315d2cae4448a866a14978fa8ae55"}'></script><!-- End Cloudflare Web Analytics -->`
+function withAnalytics(html){
+ const clean=html.replace(/<!-- Cloudflare Web Analytics -->[\s\S]*?<!-- End Cloudflare Web Analytics -->/g,'')
+ return publishing?clean.replace('</body>',`${analyticsSnippet}</body>`):clean
+}
+const shell=withAnalytics(await readFile('dist/index.html','utf8')).replace(/<meta name="robots" content="[^"]*"\s*\/?>/,`<meta name="robots" content="${publishing?'index,follow':'noindex,nofollow'}"/>`)
 const src=await readFile('src/content/collection.ts','utf8')
 const entries=JSON.parse(src.slice(src.indexOf('= [')+2).trim().replace(/;\s*$/,''))
 const manuscript=await readFile('src/content/reflection.txt','utf8')
@@ -37,7 +43,8 @@ for(const p of pages){
 }
 await mkdir('dist/gateway',{recursive:true});await writeFile('dist/gateway/index.html',await readFile('dist/index.html','utf8'))
 await writeFile('dist/404.html',shell.replace('content="index,follow"','content="noindex,follow"'))
-if(!publishing){const original=await readFile('dist/original/index.html','utf8');await writeFile('dist/original/index.html',original.replace('</head>','<meta name="robots" content="noindex,nofollow"/></head>'))}
+const original=withAnalytics(await readFile('dist/original/index.html','utf8'))
+await writeFile('dist/original/index.html',publishing?original:original.replace('</head>','<meta name="robots" content="noindex,nofollow"/></head>'))
 await writeFile('dist/robots.txt',publishing?'User-agent: *\nAllow: /\nSitemap: https://moonconfessions.com/sitemap.xml\n':'User-agent: *\nDisallow: /\n')
 const paths=pages.filter(p=>p.path!=='about').map(p=>p.path).concat('original')
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(path=>`<url><loc>https://moonconfessions.com/${path?path+'/':''}</loc></url>`).join('')}</urlset>`)
