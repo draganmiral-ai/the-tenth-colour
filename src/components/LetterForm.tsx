@@ -18,7 +18,7 @@ export function LettersConfirmed() {
   return <main id="main" className="letters-confirmed wrap">
     <span className="eyebrow">LETTERS TO YOU</span>
     <h1>You are allowed<br/> to <em>arrive slowly.</em></h1>
-    <p>Letters are paused for now. You are welcome to keep reading.</p>
+    <p>Your email address is confirmed. The next letter will find you here, about once a month. Until then, make yourself at home in the writing.</p>
     <a className="text-link" href="/read/before-you-read/">Find a place to begin <MoonMark/></a>
   </main>
 }
