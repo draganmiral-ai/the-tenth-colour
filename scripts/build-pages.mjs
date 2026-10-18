@@ -38,7 +38,12 @@ for(const p of pages){
  let html=shell.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*"\s*\/?>/,`<meta name="description" content="${esc(p.description)}"/>`)
  if(p.noindex)html=html.replace('content="index,follow"','content="noindex,follow"')
  html=html.replace('</head>',`<link rel="canonical" href="${url}"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(p.description)}"/><meta property="og:url" content="${url}"/><meta property="og:type" content="${p.paragraphs?'article':'website'}"/>${image?`<meta property="og:image" content="https://moonconfessions.com${image}"/>`:``}</head>`)
- const words=p.body||(p.paragraphs?`<h1>${esc(p.title)}</h1>${p.paragraphs.map(t=>`<p>${esc(t).replaceAll('\n','<br/>')}</p>`).join('')}`:`<h1>${esc(p.title)}</h1><p>${esc(p.description)}</p>`)
+ const picture=photo=>`<img src="${esc(photo.src)}" alt="${esc(photo.alt)}" width="${photo.width}" height="${photo.height}" style="max-width:100%;height:auto" loading="lazy"/>`
+ const photoBody=p.photoEssay?`<h1>${esc(p.title)}</h1><p>${esc(p.subtitle||p.description)}</p>${picture(p.photoEssay.opening)}${p.paragraphs.map(t=>{
+   const pause=p.photoEssay.breaks.find(item=>item.afterParagraph===t)
+   return `<p>${esc(t).replaceAll('\n','<br/>')}</p>${pause?`<figure style="margin:40px 0">${pause.images.map(picture).join('')}${pause.caption?`<figcaption>${esc(pause.caption)}</figcaption>`:''}</figure>`:''}`
+ }).join('')}`:null
+ const words=photoBody||p.body||(p.paragraphs?`<h1>${esc(p.title)}</h1>${p.paragraphs.map(t=>`<p>${esc(t).replaceAll('\n','<br/>')}</p>`).join('')}`:`<h1>${esc(p.title)}</h1><p>${esc(p.description)}</p>`)
  const links=(p.links||[]).map(link=>`<p><a href="${esc(link.href)}">${esc(link.label)}</a>${link.note?` — ${esc(link.note)}`:''}</p>`).join('')
  html=html.replace(/<noscript>[\s\S]*?<\/noscript>/,`<noscript><article style="max-width:640px;margin:60px auto;padding:20px;font:20px/1.7 Georgia,serif">${words}${links}${p.externalHref?`<p><a href="${esc(p.externalHref)}">View on Amazon</a></p>`:``}<a href="/">Moon Confessions</a></article></noscript>`)
  await writeFile(`dist/${p.path}/index.html`,html)

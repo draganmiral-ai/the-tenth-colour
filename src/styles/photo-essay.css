@@ -1,0 +1,54 @@
+/* The photographs retain their full, unaltered compositions. */
+.morning-feature{grid-column:1/-1;display:grid;grid-template-columns:minmax(200px,.7fr) 1.3fr;gap:9%;align-items:center;padding-bottom:56px;border-bottom:1px solid var(--line)}
+.morning-feature-image{max-width:310px;overflow:hidden}
+.morning-feature-image img{width:100%;height:auto;display:block}
+.morning-feature-copy{max-width:580px}
+.morning-feature-copy .eyebrow{color:#766544}
+.morning-feature-copy h2{font-size:clamp(44px,5vw,70px);line-height:1.04;margin:24px 0;transition:color 1.2s}
+.morning-feature-copy>p{font:26px/1.45 var(--serif);max-width:420px;margin-bottom:25px}
+.morning-feature:hover h2,.morning-feature:focus-visible h2{color:#877046}
+.collection .entry-the-beauty-of-being-here .image-link{aspect-ratio:4/5;background:#d4c4a8}
+.collection .entry-the-beauty-of-being-here .image-link img{object-position:center 42%}
+.photo-essay .reader-opening{max-width:1080px;display:grid;grid-template-columns:1.25fr .75fr;column-gap:8%;align-items:center;padding-bottom:32px}
+.photo-essay .reader-opening>.back-link,.photo-essay .reader-path-context{grid-column:1/-1}
+.photo-essay .reader-intro{text-align:left;min-width:0}
+.photo-essay .reader-intro>.eyebrow{margin:0 0 22px;color:var(--muted)}
+.photo-essay .reader-intro h1{font-size:clamp(48px,5.7vw,78px);line-height:1.02;max-width:560px;text-wrap:balance;margin:0}
+.photo-essay .reader-deck{font-size:26px;line-height:1.4;margin:25px 0 32px;max-width:480px}
+.photo-essay .reader-tools{flex-wrap:wrap;gap:2px 20px}
+.photo-essay .reader-tools>div{gap:22px}
+.essay-photographs{padding:0;border:0}
+.essay-photographs img{display:block;width:100%;height:auto;object-fit:contain}
+.essay-photographs-opening{margin:12px 0 0;width:100%;max-width:330px;justify-self:end}
+.photo-essay .manuscript{margin-top:40px}
+.essay-photographs-pair{width:min(940px,calc(100vw - 80px));margin:65px 0 65px 50%;transform:translateX(-50%)}
+.essay-photographs-pair>div{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.essay-photographs-pair img:last-child{margin-top:74px}
+.essay-photographs figcaption{font:13px/1.7 var(--sans);color:var(--muted);letter-spacing:.015em;margin-top:20px;text-align:center}
+.essay-photographs-return{max-width:410px;margin:70px auto}
+.photo-essay .manuscript>.essay-emphasis{font:italic 36px/1.3 var(--serif);margin:55px 0;max-width:630px;color:#76613e}
+.night-reading .reader-intro>.eyebrow,.night-reading .essay-photographs figcaption{color:#c5bcaa}
+.night-reading.photo-essay .manuscript>.essay-emphasis{color:#ddc79c}
+@media(max-width:1000px) and (min-width:701px){.photo-essay .reader-opening{column-gap:6%;grid-template-columns:1.1fr .9fr}.photo-essay .reader-intro h1{font-size:55px}.photo-essay .reader-tools{display:block}.photo-essay .reader-deck{font-size:23px}}
+@media(max-width:700px){
+ .morning-feature{grid-template-columns:110px 1fr;gap:24px;padding-bottom:32px}
+ .morning-feature-copy h2{font-size:36px;margin:12px 0}
+ .morning-feature-copy>p{font-size:22px;margin-bottom:13px}
+ .morning-feature-copy .eyebrow{font-size:10px;line-height:1.6}
+ .morning-feature .text-link{font-size:13px;gap:12px}
+ .photo-essay .reader-opening{display:block;padding-bottom:0}
+ .photo-essay .reader-intro h1{font-size:49px;max-width:430px}
+ .photo-essay .reader-deck{font-size:23px;margin:18px 0 24px;max-width:450px}
+ .photo-essay .reader-intro>.eyebrow{font-size:11px;margin-bottom:17px}
+ .photo-essay .reader-tools{display:flex}
+ .essay-photographs-opening{width:72%;max-width:330px;margin:28px auto 38px}
+ .photo-essay .manuscript{margin-top:0}
+ .essay-photographs-pair{width:calc(100% + 12px);margin-top:42px;margin-bottom:42px}
+ .essay-photographs-pair>div{gap:12px}
+ .essay-photographs-pair img:last-child{margin-top:40px}
+ .essay-photographs figcaption{font-size:12px;margin-top:14px}
+ .essay-photographs-return{width:86%;margin:45px auto}
+ .photo-essay .manuscript>.essay-emphasis{font-size:31px;margin:42px 0}
+}
+@media(max-width:380px){.morning-feature{grid-template-columns:82px 1fr;gap:18px}.morning-feature-copy h2{font-size:31px}.morning-feature-copy>p{font-size:20px}.photo-essay .reader-intro h1{font-size:43px}}
+@media(prefers-reduced-motion:reduce){.morning-feature-copy h2{transition:none}}

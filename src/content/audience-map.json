@@ -542,5 +542,23 @@
       "vulnerability",
       "healing"
     ]
+  },
+  "the-beauty-of-being-here": {
+    "stages": [
+      "curious",
+      "beginning",
+      "becoming",
+      "returning"
+    ],
+    "emotions": [
+      "gratitude",
+      "wonder",
+      "morning",
+      "beauty",
+      "hope",
+      "prayer",
+      "ordinary moments",
+      "presence"
+    ]
   }
 }

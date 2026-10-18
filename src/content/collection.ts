@@ -1,6 +1,148 @@
-export type Entry = {slug:string;title:string;category:'Faith & belonging'|'Light & hope'|'Becoming & healing'|'Love & letting go'|'Ordinary grace';format:'Reflection'|'Poem'|'Film'|'Note';excerpt:string;paragraphs:string[];image?:string;imagePlacement?:'opening';imageAlt?:string;imageCaption?:string;video?:string;gallery?:string[];source:string};
+export type EssayPhoto = {src:string;alt:string;width:number;height:number};
+export type Entry = {slug:string;title:string;category:'Faith & belonging'|'Light & hope'|'Becoming & healing'|'Love & letting go'|'Ordinary grace';format:'Reflection'|'Poem'|'Film'|'Note'|'Essay';excerpt:string;subtitle?:string;photoEssay?:{opening:EssayPhoto;breaks:{afterParagraph:string;images:EssayPhoto[];caption?:string}[]};paragraphs:string[];image?:string;imagePlacement?:'opening';imageAlt?:string;imageCaption?:string;video?:string;gallery?:string[];source:string};
 
 export const entries: Entry[] = [
+  {
+    "slug": "the-beauty-of-being-here",
+    "title": "The Beauty of Being Here",
+    "subtitle": "On gratitude, familiar truths, and the extraordinary privilege of another morning.",
+    "category": "Ordinary grace",
+    "format": "Essay",
+    "excerpt": "The sky does not wait for us to finish worrying before it turns gold.",
+    "paragraphs": [
+      "There is a peculiar little struggle I have every time I sit down to write something meaningful.",
+      "I find myself questioning whether what I am about to say has already been said too many times.",
+      "Whether it sounds too sentimental. Too obvious. Too terribly cheesy.",
+      "Especially when I find myself writing about gratitude, hope, second chances, or the importance of finding beauty in the little things.",
+      "We have all encountered those familiar pieces of wisdom scattered across the internet. The gentle reminders to be grateful. To appreciate the present. To look on the bright side.",
+      "And, if I am being entirely fair, I understand why they sometimes make us roll our eyes.",
+      "Because life is not always particularly interested in our positive outlook.",
+      "Some mornings arrive carrying worries from the night before. Some days ask more of us than we believe we have left to give. And sometimes, being told to simply appreciate the little things can feel almost insulting when the bigger things are falling apart.",
+      "I have never wanted my writing to pretend otherwise.",
+      "But recently, I found myself questioning something else.",
+      "What actually makes a beautiful thought become cheesy?",
+      "Is it the number of times it has been repeated?",
+      "Is it the simplicity of the message?",
+      "Or have we simply become so accustomed to hearing certain truths that we no longer stop to consider what made them worth saying in the first place?",
+      "I imagine that somewhere, at some point in time, somebody expressed one of those familiar sentiments for the very first time.",
+      "And perhaps, in that moment, it was profound.",
+      "Perhaps it came from a place of extraordinary pain, or love, or some deeply personal revelation.",
+      "Perhaps it changed somebody’s life.",
+      "Then the world repeated it. Again and again, until what was once a revelation became a caption on a photograph.",
+      "But surely repetition does not make something less true.",
+      "In fact, perhaps the very reason certain thoughts survive so much repetition is because there is something undeniably human about them.",
+      "Something we keep discovering for ourselves, no matter how many times somebody else has discovered it before us.",
+      "Anyway, I digress.",
+      "I actually wanted to tell you about my mornings.",
+      "Every morning, when I pray, the first thing I offer is gratitude.",
+      "Before I ask for anything, before I think about the responsibilities waiting for me, before the world has had an opportunity to make its demands, I thank Allah for allowing me to wake up one more time.",
+      "And I do not mean that as some grand spiritual statement.",
+      "It is simply something that has become deeply personal to me.",
+      "The thought that I have been given another day.",
+      "Another opportunity to do something differently. To correct something I got wrong yesterday. To try a little harder. To make somebody’s life a little better. To understand myself a little more.",
+      "And, if I am fortunate, to move one small step closer to the purpose for which I was created.",
+      "There is something incredibly humbling about beginning a day this way.",
+      "Because before the achievements, the disappointments, the plans, and the endless little complications of being human, there is this one extraordinary fact.",
+      "I am here.",
+      "Again.",
+      "And this week, for reasons I cannot quite explain, that simple realization felt especially beautiful.",
+      "I have witnessed some of the most magnificent sunrises.",
+      "Morning after morning, the sky seemed to transform itself into something that belonged in a gallery rather than above the ordinary world.",
+      "Clouds suspended in impossible arrangements. Colours that seemed too delicate to be real. Light travelling slowly across the horizon, changing everything it touched.",
+      "And every morning, there was something different.",
+      "Something that existed for only a little while before disappearing forever.",
+      "I found myself taking photograph after photograph, almost desperately trying to preserve what I was witnessing.",
+      "And the rather wonderful thing is that none of these photographs needed anything added to them.",
+      "No imagined colours. No artificial skies. No improvements.",
+      "Just moments that actually happened.",
+      "And the more I looked at them, the more I thought about the extraordinary arrangement of circumstances that had brought me there.",
+      "The exact time I woke up.",
+      "The moment I stepped outside.",
+      "The particular formation of the clouds.",
+      "The angle of the rising sun.",
+      "The few minutes during which everything came together before changing into something else.",
+      "Of all the possible moments in that morning, I happened to be present for that one.",
+      "I know there are perfectly reasonable explanations for all of it.",
+      "There is science behind the light, the atmosphere, the colours, the movement of clouds.",
+      "And I find that beautiful too.",
+      "But understanding how something happens has never stopped me from wondering about the extraordinary privilege of being there when it does.",
+      "Perhaps that is where faith enters the conversation for me.",
+      "Not necessarily in needing every beautiful thing to be a miraculous event.",
+      "But in recognizing that the ordinary world itself can be astonishing enough to inspire gratitude.",
+      "That something does not need to defy nature to feel like a blessing.",
+      "Sometimes, nature is the blessing.",
+      "Sometimes, the miracle, if I may use that word, is simply that we are here to witness it.",
+      "And perhaps that is what these photographs have reminded me of.",
+      "Not that life is always beautiful.",
+      "I know better than to make such a claim.",
+      "But that beauty continues to exist even when our lives are complicated.",
+      "The sky does not wait for us to finish worrying before it turns gold.",
+      "The morning does not ask whether we have resolved yesterday’s disappointments before it arrives.",
+      "And the sun does not need our permission to rise.",
+      "There is something strangely comforting about that.",
+      "The world continues to offer moments of wonder, even when we are too distracted, too tired, or too occupied with our own thoughts to notice them.",
+      "And occasionally, we are fortunate enough to look up at exactly the right time.",
+      "So perhaps those familiar reminders about gratitude are not quite as cheesy as I once feared.",
+      "Perhaps we simply need to experience them for ourselves before they begin to mean something again.",
+      "As another Sunday arrives, I find myself wishing something rather simple for you.",
+      "I hope the coming week is kind to you.",
+      "But even if it is not, I hope there will be moments within it that remind you of the beauty that still exists around you.",
+      "I hope there will be a morning when you stop for a moment, look at the sky, and remember that you have been given another opportunity.",
+      "Not necessarily to change your entire life.",
+      "Perhaps just to do one thing a little differently.",
+      "To offer kindness where you might otherwise have offered frustration.",
+      "To try again where yesterday you gave up.",
+      "Or simply to exist, without demanding that every moment of your existence become an achievement.",
+      "And I hope that, somewhere in the middle of your very human, beautifully imperfect week, you encounter something that makes you feel grateful to have been there.",
+      "Even if it is only for a moment.",
+      "Because, cheesy or not, I still believe there is something extraordinary about being alive to witness the birth of another day.",
+      "And I intend to keep thanking Allah for every single one I am given.",
+      "With love, and wishes for a glorious week ahead,",
+      "XOXO,\nMoon Confession"
+    ],
+    "image": "/media/being-here/misted-glass.jpg",
+    "imageAlt": "Soft blue and amber morning light seen through droplets on misted glass.",
+    "photoEssay": {
+      "opening": {
+        "src": "/media/being-here/aircraft-and-clouds.jpg",
+        "alt": "An aircraft crosses a cloud-filled morning sky above a walkway, palms and curved architecture.",
+        "width": 1320,
+        "height": 2346
+      },
+      "breaks": [
+        {
+          "afterParagraph": "Just moments that actually happened.",
+          "images": [
+            {
+              "src": "/media/being-here/intersection.png",
+              "alt": "The rising sun above an ordinary intersection, with a red traffic light and an empty crossing.",
+              "width": 941,
+              "height": 1672
+            },
+            {
+              "src": "/media/being-here/rooftop-sunrise.jpg",
+              "alt": "A golden sunrise over a curved roof, a green lawn and light reflected on the pavement.",
+              "width": 1320,
+              "height": 2346
+            }
+          ],
+          "caption": "Photographs from my week. As they were."
+        },
+        {
+          "afterParagraph": "Perhaps we simply need to experience them for ourselves before they begin to mean something again.",
+          "images": [
+            {
+              "src": "/media/being-here/misted-glass.jpg",
+              "alt": "Soft blue and amber morning light seen through droplets on misted glass.",
+              "width": 1320,
+              "height": 2346
+            }
+          ]
+        }
+      ]
+    },
+    "source": "Original essay and unaltered morning photographs supplied by the author, 18 October 2026"
+  },
   {
     "slug": "unprovoked",
     "title": "Unprovoked",
